@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Pizzeria.Pizza" table="pizzas">
+        <meta attribute="class-description">
+            This class contains the autor  detail.
+        </meta>
+        <id name="id_pizza" type="int" column="idpizza">
+        </id>
+        <property name="name" column="name" type="string"/>
+        <property name="price" column="price" type="float"/>
+
+        <!--<set name="listaingredientes" table="contiene"
+             inverse="true" cascade="all" >
+            <key>
+                <column name="idpizza" not-null="true" />
+            </key>
+            <many-to-many class="Ingrediente" column="idingredient">
+            </many-to-many>
+        </set>-->
+    </class>
+</hibernate-mapping>

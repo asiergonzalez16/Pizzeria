@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Pizzeria.OrderDetail" table="orderdetails">
+        <meta attribute="class-description">
+        </meta>
+        <composite-id>
+            <key-property name="id_order" column="idorder" type="int"/>
+            <key-property name="id_pizza" column="idpizza" type="int"/>
+        </composite-id>
+        <property name="quantity" column="quantity" type="int"/>
+        <property name="priceEach" column="priceeach" type="float"/>
+
+        <many-to-one name="order">
+            <column name="id_order"/>
+        </many-to-one>
+        <many-to-one name="pizza">
+            <column name="id_pizza"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
